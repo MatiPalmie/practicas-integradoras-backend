@@ -1,0 +1,13 @@
+<h1>Productos hasta el momento</h1>
+
+{{#each productos}}
+<ul>
+    <li>Product:{{this.product}}</li>
+    <li>Description:{{this.description}}</li>
+    <li>Price:{{this.price}}</li>
+    <li>Stock:{{this.stock}}</li>
+</ul>
+{{else}}
+<h2>No hay productos</h2>
+{{/each}}
+

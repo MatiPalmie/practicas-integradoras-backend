@@ -1,0 +1,27 @@
+<h1>Productos hasta el momento</h1>
+<h2>Bienvenido {{user.first_name}} {{user.last_name}}</h2>
+{{#if role}}
+<p>Rol {{user.role}}</p>
+{{/if}}
+<a href="/session/logout">Cerrar Sesion</a>
+
+{{#each productList.docs}}
+<ul>
+    <li>Product:{{this.product}}</li>
+    <li>Description:{{this.description}}</li>
+    <li>Price:{{this.price}}</li>
+    <li>Stock:{{this.stock}}</li>
+</ul>
+{{else}}
+<h2>No hay productos</h2>
+{{/each}}
+<div>
+        <a href="/products?page={{productList.prevPage}}&&limit=">Prev</a>
+        <a href="/products?page={{productList.nextPage}}">Next</a>
+    </div>
+
+    <h5>
+      {{ productList.page }} / {{ productList.totalPages }}
+    </h5>
+</div>
+
